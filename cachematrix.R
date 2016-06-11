@@ -1,8 +1,16 @@
-## Put comments here that give an overall description of what your
-## functions do
+## Author: Tarek Darwish
+## Date  : Jun 10, 2016
+## Description: This file contains R code to create a specail "matrix" object
+##              that can  cache its inverse. If asked to compute the inverse,
+##              the code will check to see if the inverse of the matrix has 
+##              already been calcualted in the cache, then the code will
+##              retrieve the inverse from the cache.
 
-## Write a short comment describing this function
 
+
+
+## The following function creates a special matrix variable
+## If it is in cache, it will assign it NULL. The cache name is "inv"
 makeCacheMatrix <- function(x = matrix()) {
   inv <- NULL
   set <- function (y) {
@@ -16,7 +24,10 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## The following function, computes the inverse of a matrix.
+## if the inverse of this matrix has been computed before,
+## then the function will instead retrieve the inverse from the 
+## cache and skip doing the computation
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
